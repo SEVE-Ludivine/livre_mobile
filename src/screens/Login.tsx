@@ -11,9 +11,16 @@ export function Login({navigation}: AuthNavProps<'Login'>){
     const {login} = useContext(AuthContext);
     const [Mail, SetMail] = React.useState('');
     const [Password, SetPassword] = React.useState('');
+    function _Connexion(Mail : String ,Password : String){
+      var Token = Connexion(Mail,Password);
+      if (Token != null){
+        login(Token);
+      }
+    }
     return (
         <View style={styles.container}>
         <Text>Bienvenue sur l'application </Text>
+        <br/>
         <Text>Connexion</Text>
         <TextInput
           style={{ height: 40, width:200, borderColor: 'gray', borderWidth: 1, margin: 5 }}
@@ -28,7 +35,8 @@ export function Login({navigation}: AuthNavProps<'Login'>){
           onChangeText ={ text=> SetPassword(text)}  
           
         />
-        <Button onPress={() => login(Mail,Password)} title="Connexion"></Button>
+        <Button onPress={() => _Connexion(Mail,Password)} title="Connexion"></Button>
+        <br/><br/>
         <Button onPress={() => navigation.navigate('Register')} title="S'inscrire"></Button>
       </View>
     )

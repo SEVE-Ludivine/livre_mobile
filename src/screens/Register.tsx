@@ -23,6 +23,7 @@ export function Register({navigation}: AuthNavProps<'Register'>){
               
             />
             <Button onPress={() => Inscription(Mail,Password)} title="Inscription"></Button>
+            <br/><br/>
             <Button onPress={() => navigation.navigate('Login')} title="Se connecter"></Button>
         </View>
     )

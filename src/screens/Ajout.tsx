@@ -1,9 +1,11 @@
 import React from 'react'
-import { Button, Text, View } from 'react-native'
+import { Button, Picker, Text, View } from 'react-native'
 import { HomeStacknavProps } from '../navigation/HomeParamList';
 import { TextInput, TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import {styles} from '../CSS/styleA';
 import { ajoutOuvrage } from '../API/ServiceAuthentification';
+import DropDownPicker from 'react-native-dropdown-picker';
+
 
 export function Ajout({navigation}: HomeStacknavProps<'Ajout'>){
     const [Titre, SetTitre] = React.useState('');
